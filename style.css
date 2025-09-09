@@ -754,7 +754,6 @@ hr {
     
     .header {
         grid-template-columns: 150px 1fr auto;
-        padding: 20px 0px 15px 0px;
     }
     
     .logo img {
@@ -825,7 +824,6 @@ hr {
     
     .header {
         grid-template-columns: 120px 1fr auto;
-        padding: 15px 0px 10px 0px;
     }
     
     .products {
