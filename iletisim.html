@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="top-bar-inner">
                     <div>
-                        <a href="#"><div style="display: flex; justify-content: flex-start; align-items: center; gap: 8px;"><img src="flags/tr.svg" style="width: 16px; height: 16px; border-radius: 2px;" alt=""> Turkish <i data-lucide="chevron-down" width="10" height="10"></i></div></a>
+                        <a href="#"><div style="display: flex; justify-content: flex-start; align-items: center; gap: 8px;"><img src="flags/tr.svg" style="width: 16px; height: 16px; border-radius: 2px;" alt=""> <span class="hide-on-mobile">Turkish</span> <i data-lucide="chevron-down" width="10" height="10"></i></div></a>
                     </div>
                     <div style="text-align: right;">
                         <i data-lucide="phone" width="10" height="10"></i>&nbsp;&nbsp;<a href="tel:+905370298161">+90 537 029 81 61</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i data-lucide="phone" width="10" height="10"></i>&nbsp;&nbsp;<a href="tel:+905323225313">+90 532 322 53 13</a>
@@ -31,7 +31,7 @@
                     <div class="logo">
                         <a href="index.html"><img src="hasel-logo.png" width="200" alt="Hasel Endüstri"></a>
                     </div>
-                    <div class="menu">
+                    <div class="menu desktop-menu">
                         <ul>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle">Ürünlerimiz<i data-lucide="chevron-down"></i></a>
@@ -113,6 +113,12 @@
                             <li><a href="iletisim.html">İletişim</a></li>
                         </ul>
                     </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i data-lucide="menu"></i>
+                    </button>
+
                     <div class="menu-cta">
                         <a href="iletisim.html">Teklif Al</a>
                     </div>
@@ -120,8 +126,99 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <a href="index.html"><img src="hasel-logo.png" width="120" alt="Hasel Endüstri"></a>
+                <button class="mobile-menu-close" id="mobile-menu-close">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-body">
+                <div class="mobile-accordion">
+                    <div class="mobile-accordion-item">
+                        <div class="mobile-accordion-header">
+                            <span>Ürünlerimiz</span>
+                            <i data-lucide="chevron-down" class="mobile-accordion-icon"></i>
+                        </div>
+                        <div class="mobile-accordion-content">
+                            <div class="mobile-sub-accordion">
+                                <div class="mobile-sub-accordion-item">
+                                    <div class="mobile-sub-accordion-header">
+                                        <span>Çadırlar</span>
+                                        <i data-lucide="chevron-down" class="mobile-sub-accordion-icon"></i>
+                                    </div>
+                                    <div class="mobile-sub-accordion-content">
+                                        <a href="canopy_house.html">Canopy House</a>
+                                        <a href="pagoda_cadir.html">Pagoda Çadır</a>
+                                        <a href="starry_dome_house.html">Starry Dome House</a>
+                                        <a href="endustriyel_cadirlar.html">Endüstriyel Çadırlar</a>
+                                        <a href="barinak_cadirlar.html">Barınak Çadırlar</a>
+                                        <a href="gazebo_cadir.html">Gazebo Çadır (Katlanabilir Çardak)</a>
+                                        <a href="uzatilabilir_golgelik.html">Uzatılabilir Gölgelik</a>
+                                        <a href="kamp_cadirlar.html">Kamp Çadırları</a>
+                                        <a href="cadir_kataloglari.html">Çadır Katalogları</a>
+                                    </div>
+                                </div>
+                                <div class="mobile-sub-accordion-item">
+                                    <div class="mobile-sub-accordion-header">
+                                        <span>Branda ve PVC'ler</span>
+                                        <i data-lucide="chevron-down" class="mobile-sub-accordion-icon"></i>
+                                    </div>
+                                    <div class="mobile-sub-accordion-content">
+                                        <a href="pvc_kaplamali_branda_kumaslar.html">PVC Kaplamalı Branda Kumaşlar</a>
+                                        <a href="cadir_isik_gecirmez_branda_kumaslar.html">Çadır Işık Geçirmez (Blackout) Branda Kumaşları</a>
+                                        <a href="mimari_membran.html">Mimari Membran (Gölgelik)</a>
+                                        <a href="kamyon_brandalari.html">Kamyon Brandaları</a>
+                                        <a href="kamyon_yan_perde_brandalari.html">Kamyon Yan Perde Brandaları</a>
+                                        <a href="acikhava_isik_gecirmez.html">Açıkhava Işık Geçirmez</a>
+                                        <a href="sisme_brandalar.html">Şişme Brandalar</a>
+                                        <a href="tekne_ve_bot_brandalari.html">Tekne ve Bot Brandaları</a>
+                                        <a href="seffaf_pvc_ve_tenteler.html">Şeffaf PVC ve Tenteler</a>
+                                        <a href="super_seffaf_pvc_levhalar.html">Süper Şeffaf PVC Levhalar</a>
+                                        <a href="spor_canta_kumaslari.html">Spor Çanta Kumaşları</a>
+                                        <a href="endustriyel_makine_ortusu_kumaslari.html">Endüstriyel Makine Örtüsü Kumaşları</a>
+                                        <a href="suya_dayanikli_buz_torbasi_kumaslari.html">Suya Dayanıklı Buz Torbası Kumaşları</a>
+                                        <a href="havalandirma_kanali_kumaslari.html">Havalandırma Kanalı Kumaşları</a>
+                                        <a href="yuzme_havuzu_astarlari.html">Yüzme Havuzu Astarları</a>
+                                        <a href="branda_kataloglari.html">Branda Katalogları</a>
+                                    </div>
+                                </div>
+                                <a href="ahsap_ev_yapimi.html" class="mobile-menu-link">Ahşap Ev Yapımı</a>
+                                <a href="bakir_malzemeler.html" class="mobile-menu-link">Bakır Malzemeler</a>
+                                <a href="aluminyum_malzemeler.html" class="mobile-menu-link">Alüminyum Malzemeler</a>
+                                <a href="galvanizli_demir.html" class="mobile-menu-link">Galvanizli Demir</a>
+                                <a href="aluminyum_folyo_ve_metabolize_bob.html" class="mobile-menu-link">Alüminyum Folyo ve Metabolize Bob</a>
+                                <a href="makinalar.html" class="mobile-menu-link">Makinalar</a>
+                                <a href="hayvan_yemi_urunleri.html" class="mobile-menu-link">Hayvan Yemi Ürünleri</a>
+                                <a href="kimyasallar.html" class="mobile-menu-link">Kimyasallar</a>
+                                <a href="deniz_urunleri.html" class="mobile-menu-link">Deniz Ürünleri</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-accordion-item">
+                        <div class="mobile-accordion-header">
+                            <span>Kataloglarımız</span>
+                            <i data-lucide="chevron-down" class="mobile-accordion-icon"></i>
+                        </div>
+                        <div class="mobile-accordion-content">
+                            <a href="cadir_kataloglari.html" class="mobile-menu-link">Çadır Katalogları</a>
+                            <a href="branda_kataloglari.html" class="mobile-menu-link">Branda Katalogları</a>
+                            <a href="bakir_kataloglari.html" class="mobile-menu-link">Bakır Katalogları</a>
+                        </div>
+                    </div>
+                    <a href="temsilcilerimiz.html" class="mobile-menu-link">Temsilcilerimiz</a>
+                    <a href="distributorluklerimiz.html" class="mobile-menu-link">Distribütörlüklerimiz</a>
+                    <a href="iletisim.html" class="mobile-menu-link">İletişim</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main>
-        <div class="intro-bg bg-dark-gradient large-container" style="background-color: black; background-size: cover;">
+        <div class="intro-bg bg-dark-gradient" style="background-color: black; background-size: cover;">
             <div class="intro container">
                 <h1>İletişim</h1>
                 <br>
@@ -285,6 +382,85 @@
                         dropdown.classList.remove('active');
                     });
                 }
+            });
+        });
+
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileAccordionItems = document.querySelectorAll('.mobile-accordion-item');
+            const mobileSubAccordionItems = document.querySelectorAll('.mobile-sub-accordion-item');
+
+            // Toggle mobile menu
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+
+            // Close mobile menu
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+
+            // Close mobile menu when clicking outside
+            mobileMenu.addEventListener('click', function(e) {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Mobile accordion functionality
+            mobileAccordionItems.forEach(item => {
+                const header = item.querySelector('.mobile-accordion-header');
+                
+                if (header) {
+                    header.addEventListener('click', function() {
+                        // Close other accordion items
+                        mobileAccordionItems.forEach(other => {
+                            if (other !== item) {
+                                other.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle current accordion item
+                        item.classList.toggle('active');
+                    });
+                }
+            });
+
+            // Mobile sub-accordion functionality
+            mobileSubAccordionItems.forEach(item => {
+                const header = item.querySelector('.mobile-sub-accordion-header');
+                
+                if (header) {
+                    header.addEventListener('click', function() {
+                        // Close other sub-accordion items in the same parent
+                        const parentAccordion = item.closest('.mobile-accordion-item');
+                        const siblingItems = parentAccordion.querySelectorAll('.mobile-sub-accordion-item');
+                        
+                        siblingItems.forEach(sibling => {
+                            if (sibling !== item) {
+                                sibling.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle current sub-accordion item
+                        item.classList.toggle('active');
+                    });
+                }
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
             });
         });
     </script>

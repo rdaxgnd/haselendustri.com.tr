@@ -288,7 +288,6 @@ hr {
     background-color: #000000;
     color: #ffffff;
     position: relative;
-    border-radius: 8px;
 }
 
 .intro {
@@ -309,7 +308,6 @@ hr {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
     pointer-events: none;
     z-index: 0;
-    border-radius: 8px;
 }
 
 .info {
@@ -465,8 +463,276 @@ hr {
     gap: 20px;
 }
 
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #212121;
+    font-size: 24px;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background: #ffffff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.mobile-menu.active .mobile-menu-content {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #ffffff;
+    color: #000000;
+}
+
+.mobile-menu-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #666;
+    font-size: 20px;
+}
+
+.mobile-menu-body {
+    padding: 20px;
+}
+
+.mobile-accordion {
+    width: 100%;
+}
+
+.mobile-accordion-item {
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 0;
+}
+
+.mobile-accordion-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.mobile-accordion-header:hover {
+    color: #4c4c4c;
+}
+
+.mobile-accordion-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.mobile-accordion-item.active .mobile-accordion-icon {
+    transform: rotate(180deg);
+}
+
+.mobile-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-accordion-item.active .mobile-accordion-content {
+    max-height: 1000px;
+}
+
+.mobile-sub-accordion {
+    padding-left: 16px;
+}
+
+.mobile-sub-accordion-item {
+    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 0;
+}
+
+.mobile-sub-accordion-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-sub-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.mobile-sub-accordion-header:hover {
+    color: #212121;
+}
+
+.mobile-sub-accordion-icon {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+.mobile-sub-accordion-item.active .mobile-sub-accordion-icon {
+    transform: rotate(180deg);
+}
+
+.mobile-sub-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-sub-accordion-item.active .mobile-sub-accordion-content {
+    max-height: 800px;
+}
+
+.mobile-sub-accordion-content a {
+    display: block;
+    padding: 8px 0 8px 16px;
+    color: #888;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.mobile-sub-accordion-content a:hover {
+    color: #212121;
+}
+
+.mobile-menu-link {
+    display: block;
+    padding: 12px 0;
+    color: #212121;
+    font-weight: 400;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.mobile-menu-link:hover {
+    color: #4c4c4c;
+}
+
+.hide-on-mobile {
+    display: inline-block;
+}
+
 /* Responsive Design */
+@media (max-width: 1260px) {
+    .desktop-menu {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        justify-self: flex-end;
+        align-items: center;
+    }
+    
+    .header {
+        grid-template-columns: 200px 1fr auto;
+        gap: 20px;
+    }
+
+    .products {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+    
+    .large-container {
+        padding: 0 15px;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .intro-bg {
+        padding: 20px 0;
+    }
+
+    .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .three-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .two-column-page-special {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 20px;
+    }
+    
+}
+
 @media (max-width: 768px) {
+
+    h1 {
+        font-size: 32px;
+        font-weight: 500;
+    }
+    
+    h2 {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
     .slider {
         height: 300px;
         margin: 20px 0;
@@ -485,6 +751,65 @@ hr {
     .slider-arrow-right {
         right: 10px;
     }
+    
+    .header {
+        grid-template-columns: 150px 1fr auto;
+        padding: 20px 0px 15px 0px;
+    }
+    
+    .logo img {
+        width: 150px;
+    }
+    
+    .mobile-menu-content {
+        width: 100%;
+    }
+
+    .top-bar-inner {
+        display: grid;
+        grid-template-columns: 40px auto;
+    }
+    
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .social {
+        text-align: center;
+    }
+
+    .two-column {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .three-column {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .two-column-page-special {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 20px;
+    }
+
+    .pdf-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .image-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -497,4 +822,14 @@ hr {
         height: 35px;
         font-size: 14px;
     }
+    
+    .header {
+        grid-template-columns: 120px 1fr auto;
+        padding: 15px 0px 10px 0px;
+    }
+    
+    .products {
+        grid-template-columns: 1fr;
+    }
+
 }
