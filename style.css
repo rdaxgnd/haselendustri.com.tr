@@ -418,10 +418,10 @@ hr {
 .product {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     border: 1px solid silver;
-    padding: 20px 0;
+    padding: 20px 20px;
     border-radius: 8px;
     background-color: #ffffff;
 }
