@@ -95,6 +95,8 @@ hr {
     }
 
     .menu ul li {
+        display: inline-flex;
+        gap: 8px;
         list-style: none;
     }
 
