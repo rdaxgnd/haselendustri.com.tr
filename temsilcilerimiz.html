@@ -8,6 +8,80 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Lightbox Styles */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-overlay.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .kartvizit {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .kartvizit:hover {
+            transform: scale(1.02);
+        }
+    </style>
     <title>Temsilcilerimiz - Hasel Endüstri</title>
 </head>
 <body>
@@ -18,8 +92,8 @@
                     <div>
                         <a href="#"><div style="display: flex; justify-content: flex-start; align-items: center; gap: 8px;"><img src="flags/tr.svg" style="width: 16px; height: 16px; border-radius: 2px;" alt=""> <span class="hide-on-mobile">Turkish</span> <i data-lucide="chevron-down" width="10" height="10"></i></div></a>
                     </div>
-                    <div style="text-align: right;">
-                        <i data-lucide="phone" width="10" height="10"></i>&nbsp;&nbsp;<a href="tel:+905370298161">+90 537 029 81 61</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i data-lucide="phone" width="10" height="10"></i>&nbsp;&nbsp;<a href="tel:+905323225313">+90 532 322 53 13</a>
+                    <div style="display: inline-flex; align-items: center; justify-content: flex-end; text-align: right;">
+                        <img src="whatsapp.svg" height="14" alt=""> &nbsp;&nbsp;<a href="tel:+905370298161">+90 537 029 81 61</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="whatsapp.svg" height="14" alt=""> &nbsp;&nbsp;<a href="tel:+905323225313">+90 532 322 53 13</a>
                     </div>
                 </div>
             </div>
@@ -264,7 +338,7 @@
                         <i data-lucide="mail" width="14" height="14"></i>&nbsp;&nbsp; <a href="mailto:iran.shahin@haselendustri.com.tr">iran.shahin@haselendustri.com.tr</a>
                     </div>
                     <div>
-                        <img src="images/shain-malekifar.jpeg" style="width: 100%;" alt=""><br><br>
+                        <img src="images/shain-malekifar.jpeg" style="width: 100%;" alt="" class="kartvizit"><br><br>
                         <a href="images/shain-malekifar.jpeg" target="_blank" download="ShainMalekifar.jpg"><i data-lucide="download" width="14" height="14"></i> Kartviziti İndir</a>
                     </div>
                 </div>
@@ -281,7 +355,7 @@
                         <i data-lucide="mail" width="14" height="14"></i>&nbsp;&nbsp; <a href="mailto:iran.bita@haselendustri.com.tr">iran.bita@haselendustri.com.tr</a>
                     </div>
                     <div>
-                        <img src="images/bita-rad.jpeg" style="width: 100%;" alt=""><br><br>
+                        <img src="images/bita-rad.jpeg" style="width: 100%;" alt="" class="kartvizit"><br><br>
                         <a href="images/bita-rad.jpeg" target="_blank" download="BitaRad.jpg"><i data-lucide="download" width="14" height="14"></i> Kartviziti İndir</a>
                     </div>
                 </div>
@@ -301,7 +375,7 @@
                         <i data-lucide="mail" width="14" height="14"></i>&nbsp;&nbsp; <a href="mailto:ria.raadcijk@haselendustri.com.tr">ria.raadcijk@haselendustri.com.tr</a>
                     </div>
                     <div>
-                        <img src="images/ria-raadwijk.jpeg" style="width: 100%;" alt=""><br><br>
+                        <img src="images/ria-raadwijk.jpeg" style="width: 100%;" alt="" class="kartvizit"><br><br>
                         <a href="images/ria-raadwijk.jpeg" target="_blank" download="RiaRaadwijk.jpg"><i data-lucide="download" width="14" height="14"></i> Kartviziti İndir</a>
                     </div>
                 </div>
@@ -321,7 +395,7 @@
                         <i data-lucide="mail" width="14" height="14"></i>&nbsp;&nbsp; <a href="mailto:maan.alhadidi@haselendustri.com.tr">maan.alhadidi@haselendustri.com.tr</a>
                     </div>
                     <div>
-                        <img src="images/maan-alhadidi.jpeg" style="width: 100%;" alt=""><br><br>
+                        <img src="images/maan-alhadidi.jpeg" style="width: 100%;" alt="" class="kartvizit"><br><br>
                         <a href="images/maan-alhadidi.jpeg" target="_blank" download="MaanAlhadidi.jpg"><i data-lucide="download" width="14" height="14"></i> Kartviziti İndir</a>
                     </div>
                 </div>
@@ -342,7 +416,7 @@
                         <i data-lucide="mail" width="14" height="14"></i>&nbsp;&nbsp; <a href="mailto:hatice.abdullaeva@haselendustri.com.tr">hatice.abdullaeva@haselendustri.com.tr</a>
                     </div>
                     <div>
-                        <img src="images/hatice-abdullaeva.jpeg" style="width: 100%;" alt=""><br><br>
+                        <img src="images/hatice-abdullaeva.jpeg" style="width: 100%;" alt="" class="kartvizit"><br><br>
                         <a href="images/hatice-abdullaeva.jpeg" target="_blank" download="HaticeAbdullaeva.jpg"><i data-lucide="download" width="14" height="14"></i> Kartviziti İndir</a>
                     </div>
                 </div>
@@ -362,7 +436,7 @@
                         <i data-lucide="mail" width="14" height="14"></i>&nbsp;&nbsp; <a href="mailto:suudiarabistan.irfan@haselendustri.com.tr">suudiarabistan.irfan@haselendustri.com.tr</a>
                     </div>
                     <div>
-                        <img src="images/irfan-helvaci.jpeg" style="width: 100%;" alt=""><br><br>
+                        <img src="images/irfan-helvaci.jpeg" style="width: 100%;" alt="" class="kartvizit"><br><br>
                         <a href="images/irfan-helvaci.jpeg" target="_blank" download="IrfanHelvaci.jpg"><i data-lucide="download" width="14" height="14"></i> Kartviziti İndir</a>
                     </div>
                 </div>
@@ -371,6 +445,17 @@
             </div>
         </div>
     </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">
+                <i data-lucide="x" width="20" height="20"></i>
+            </button>
+            <img class="lightbox-image" id="lightbox-image" src="" alt="">
+        </div>
+    </div>
+
     <footer>
         <div class="footer">
             <div class="container">
@@ -570,6 +655,52 @@
                     mobileMenu.classList.remove('active');
                     document.body.style.overflow = '';
                 });
+            });
+        });
+
+        // Lightbox Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const kartvizitImages = document.querySelectorAll('.kartvizit');
+
+            // Open lightbox
+            function openLightbox(imageSrc, imageAlt) {
+                lightboxImage.src = imageSrc;
+                lightboxImage.alt = imageAlt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            // Add click event listeners to kartvizit images
+            kartvizitImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    openLightbox(this.src, this.alt);
+                });
+            });
+
+            // Close lightbox when clicking close button
+            lightboxClose.addEventListener('click', closeLightbox);
+
+            // Close lightbox when clicking overlay
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Close lightbox with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
             });
         });
     </script>

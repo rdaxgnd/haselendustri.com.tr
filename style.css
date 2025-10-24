@@ -456,6 +456,24 @@ hr {
     color: #b8b8b8;
 }
 
+.catalogcall {
+    text-align: center;
+    background-color: #212121;
+    color: #ffffff;
+    padding: 60px;
+    border-radius: 8px;
+}
+
+.catalogcall:hover {
+    background-color: #000000;
+}
+
+.catalog-two-column {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 20px;
+}
+
 .pdf-column {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -806,6 +824,12 @@ hr {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+    }
+
+    .catalog-two-column {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
 }
