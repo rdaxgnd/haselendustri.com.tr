@@ -458,19 +458,20 @@ hr {
 
 .catalogcall {
     text-align: center;
-    background-color: #212121;
-    color: #ffffff;
-    padding: 60px;
+    background-color: #ffffff;
+    color: #212121;
+    padding: 30px;
     border-radius: 8px;
+    border: 2px solid #212121;
 }
 
 .catalogcall:hover {
-    background-color: #000000;
+    background-color: #f1f1f1;
 }
 
 .catalog-two-column {
     display: grid;
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 120px 1fr;
     gap: 20px;
 }
 
