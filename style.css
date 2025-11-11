@@ -243,6 +243,7 @@ hr {
         border-radius: 8px;
         font-size: 14px;
         border: 1px solid #000000;
+        white-space: nowrap;
     }
 
     .menu-cta a:hover {
