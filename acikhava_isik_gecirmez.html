@@ -11,12 +11,29 @@
     <title>Açıkhava Işık Geçirmez - Hasel Endüstri</title>
 </head>
 <body>
+    <!-- START MENU -->
     <section>
         <div class="top-bar">
             <div class="container">
                 <div class="top-bar-inner">
-                    <div>
-                        <a href="#"><div style="display: flex; justify-content: flex-start; align-items: center; gap: 8px;"><img src="flags/tr.svg" style="width: 16px; height: 16px; border-radius: 2px;" alt=""> <span class="hide-on-mobile">Turkish</span> <i data-lucide="chevron-down" width="10" height="10"></i></div></a>
+                    <div class="language-select" id="language-select">
+                        <a href="javascript:void(0);" class="lang-toggle">
+                            <div style="display: flex; justify-content: flex-start; align-items: center; gap: 8px;">
+                                <img src="flags/tr.svg" style="width: 16px; height: 16px; border-radius: 2px;" alt="TR"> 
+                                <span class="hide-on-mobile">Turkish</span> 
+                                <i data-lucide="chevron-down" width="10" height="10"></i>
+                            </div>
+                        </a>
+                        <div class="lang-dropdown">
+                            <a href="../index.html">
+                                <img src="flags/tr.svg" style="width: 16px; height: 16px; border-radius: 2px;" alt="TR">
+                                <span>Turkish</span>
+                            </a>
+                            <a href="en/index.html">
+                                <img src="flags/en.svg" style="width: 16px; height: 16px; border-radius: 2px;" alt="EN">
+                                <span>English</span>
+                            </a>
+                        </div>
                     </div>
                     <div style="display: inline-flex; align-items: center; justify-content: flex-end; text-align: right;">
                         <img src="whatsapp.svg" height="14" alt=""> &nbsp;&nbsp;<a href="tel:+905370298161">+90 537 029 81 61</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="whatsapp.svg" height="14" alt=""> &nbsp;&nbsp;<a href="tel:+905323225313">+90 532 322 53 13</a>
@@ -25,7 +42,6 @@
             </div>
         </div>
     </section>
-    <!-- START MENU -->
     <header>
         <div>
             <div class="container">
@@ -424,6 +440,9 @@
                     dropdowns.forEach(dropdown => {
                         dropdown.classList.remove('active');
                     });
+                    // Also close language select
+                    const langSelect = document.getElementById('language-select');
+                    if(langSelect) langSelect.classList.remove('active');
                 }
             });
 
@@ -438,6 +457,22 @@
                     });
                 }
             });
+                    
+            // Language Select Toggle
+            const langSelect = document.getElementById('language-select');
+            if(langSelect) {
+                langSelect.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                });
+                
+                // Close when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!langSelect.contains(e.target)) {
+                        langSelect.classList.remove('active');
+                    }
+                });
+            }
         });
 
         // Mobile Menu Functionality
