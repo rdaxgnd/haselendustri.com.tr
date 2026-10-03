@@ -447,6 +447,41 @@ hr {
     gap: 20px;
 }
 
+.material-legend {
+    margin-top: 14px;
+}
+
+.material-legend > b {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.material-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.material-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.material-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+
 .three-column {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -881,6 +916,12 @@ hr {
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+
+    .material-items {
+        justify-content: flex-start;
+        gap: 14px 18px;
     }
 
 }
